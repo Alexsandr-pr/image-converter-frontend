@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL = "http://localhost:5000/api/images/"
+const API_URL = "https://image-converter-backend-a5ig.onrender.com/api/images/"
 
 export const filesUpload = async (files) =>  {
     try {
