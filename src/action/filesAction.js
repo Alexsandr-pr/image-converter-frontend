@@ -1,8 +1,8 @@
 import axios from "axios"
 
 const API_URL = "https://image-converter-backend-a5ig.onrender.com/api/images/"
-
-export const filesUpload = async (files) =>  {
+//const API_URL = "http://localhost:5000/api/images/"
+export const filesUpload = async (files, degree = 100) =>  {
     try {
     
         const formData = new FormData();
@@ -13,8 +13,8 @@ export const filesUpload = async (files) =>  {
         } else {
             formData.append("file", files[0])
         }
-
-        const response = await axios.post(`${API_URL}image`, formData)
+        
+        const response = await axios.post(`${API_URL}image/${degree}`, formData)
         
         return response
     } catch {
